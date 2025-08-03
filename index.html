@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商务日语学习工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>商务日语学习工具</h1>
+            <nav class="nav">
+                <button class="nav-btn active" data-section="vocabulary">词汇学习</button>
+                <button class="nav-btn" data-section="phrases">常用表达</button>
+                <button class="nav-btn" data-section="quiz">测试复习</button>
+                <button class="nav-btn" data-section="progress">学习进度</button>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!-- 词汇学习模块 -->
+            <section id="vocabulary" class="section active">
+                <div class="section-header">
+                    <h2>商务日语词汇</h2>
+                    <select id="vocab-category" class="category-select">
+                        <option value="all">全部词汇</option>
+                        <option value="greetings">问候礼仪</option>
+                        <option value="meetings">会议</option>
+                        <option value="emails">邮件</option>
+                        <option value="negotiations">谈判</option>
+                        <option value="presentations">演示</option>
+                    </select>
+                </div>
+                <div class="vocab-grid" id="vocab-grid">
+                    <!-- 词汇卡片将通过JavaScript动态生成 -->
+                </div>
+            </section>
+
+            <!-- 常用表达模块 -->
+            <section id="phrases" class="section">
+                <div class="section-header">
+                    <h2>商务日语常用表达</h2>
+                    <select id="phrase-category" class="category-select">
+                        <option value="all">全部表达</option>
+                        <option value="opening">开场白</option>
+                        <option value="asking">询问</option>
+                        <option value="agreeing">同意/反对</option>
+                        <option value="closing">结束语</option>
+                    </select>
+                </div>
+                <div class="phrases-container" id="phrases-container">
+                    <!-- 表达列表将通过JavaScript动态生成 -->
+                </div>
+            </section>
+
+            <!-- 测试复习模块 -->
+            <section id="quiz" class="section">
+                <div class="section-header">
+                    <h2>测试复习</h2>
+                    <div class="quiz-controls">
+                        <select id="quiz-type" class="category-select">
+                            <option value="vocab">词汇测试</option>
+                            <option value="phrases">表达测试</option>
+                        </select>
+                        <button id="start-quiz" class="btn btn-primary">开始测试</button>
+                    </div>
+                </div>
+                <div class="quiz-container" id="quiz-container">
+                    <div class="quiz-welcome">
+                        <h3>选择测试类型并开始学习</h3>
+                        <p>通过测试来检验你的学习成果吧！</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习进度模块 -->
+            <section id="progress" class="section">
+                <div class="section-header">
+                    <h2>学习进度</h2>
+                </div>
+                <div class="progress-container">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>已学词汇</h3>
+                            <span class="stat-number" id="learned-vocab">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>已学表达</h3>
+                            <span class="stat-number" id="learned-phrases">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>测试次数</h3>
+                            <span class="stat-number" id="quiz-count">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>正确率</h3>
+                            <span class="stat-number" id="accuracy">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-chart">
+                        <h3>学习历史</h3>
+                        <div id="learning-history"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
